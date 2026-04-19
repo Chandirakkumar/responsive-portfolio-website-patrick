@@ -1,74 +1,325 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandirakkumar | Dashboard Portfolio</title>
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-      <!--=============== REMIXICONS ===============-->
-      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+<style>
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+*{margin:0;padding:0;box-sizing:border-box}
 
-      <title>Responsive portfolio website - Bedimcode</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         
-      </header>
+body{
+font-family:'Inter',sans-serif;
+background:#0f172a;
+color:#fff;
+display:flex;
+}
 
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home section" id="home">
-            
-         </section>
+/* ===== SIDEBAR ===== */
+.sidebar{
+width:250px;
+height:100vh;
+background:#020617;
+padding:30px;
+display:flex;
+flex-direction:column;
+gap:30px;
+}
 
-         <!--==================== ABOUT ====================-->
-         <section class="about section" id="about">
-            
-         </section>
+.logo{
+font-weight:700;
+background:linear-gradient(135deg,#6366f1,#22c55e);
+-webkit-background-clip:text;
+color:transparent;
+}
 
-         <!--==================== SKILLS ====================-->
-         <section class="skills section">
-            
-         </section>
+.menu a{
+text-decoration:none;
+color:#aaa;
+padding:12px;
+border-radius:8px;
+display:block;
+cursor:pointer;
+transition:0.3s;
+}
 
-         <!--==================== SERVICES ====================-->
-         <section class="services section" id="services">
-            
-         </section>
+.menu a.active,
+.menu a:hover{
+background:#1e293b;
+color:#fff;
+}
 
-         <!--==================== PROJECTS ====================-->
-         <section class="projects section" id="projects">
-            
-         </section>
+/* ===== MAIN ===== */
+.main{
+flex:1;
+padding:30px;
+}
 
-         <!--==================== CONTACT ====================-->
-         <section class="contact section" id="contact">
-            
-         </section>
-      </main>
+.section{
+display:none;
+}
 
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
-         
-      </footer>
+.section.active{
+display:block;
+animation:fade 0.4s ease;
+}
 
-      <!--========== SCROLL UP ==========-->
-      
+@keyframes fade{
+from{opacity:0;transform:translateY(10px)}
+to{opacity:1;transform:translateY(0)}
+}
 
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src=""></script>
+/* ===== ABOUT CARD ===== */
+.about-card{
+display:flex;
+gap:20px;
+align-items:center;
+background:#020617;
+padding:20px;
+border-radius:15px;
+margin-bottom:25px;
+}
 
-      <!--=============== EMAIL JS ===============-->
-      
+.about-card img{
+width:100px;
+height:100px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #6366f1;
+}
 
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
+.about-info h2{
+margin-bottom:5px;
+}
+
+.about-info p{
+color:#aaa;
+font-size:14px;
+}
+
+/* ===== HEADER TEXT ===== */
+.section-header{
+margin-bottom:20px;
+}
+
+.section-header h2{
+font-size:24px;
+margin-bottom:8px;
+}
+
+.section-header p{
+color:#aaa;
+font-size:14px;
+}
+
+/* ===== GRID ===== */
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+/* ===== CARD ===== */
+.card{
+padding:25px;
+border-radius:18px;
+transition:0.3s;
+min-height:120px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:8px;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+/* ===== DASHBOARD COLORS ===== */
+.dashboard-grid .card:nth-child(1){
+background:linear-gradient(135deg,#3b82f6,#1d4ed8);
+}
+
+.dashboard-grid .card:nth-child(2){
+background:linear-gradient(135deg,#10b981,#047857);
+}
+
+.dashboard-grid .card:nth-child(3){
+background:linear-gradient(135deg,#f59e0b,#b45309);
+}
+
+.dashboard-grid .card:nth-child(4){
+background:linear-gradient(135deg,#ec4899,#be185d);
+}
+
+/* ===== SKILL BAR ===== */
+.skill{
+margin-bottom:10px;
+}
+
+.bar{
+height:6px;
+background:#1e293b;
+border-radius:10px;
+overflow:hidden;
+margin-top:5px;
+}
+
+.bar div{
+height:100%;
+background:linear-gradient(135deg,#6366f1,#22c55e);
+}
+
+/* ===== BUTTON ===== */
+.btn{
+display:inline-block;
+padding:10px 20px;
+border-radius:10px;
+background:linear-gradient(135deg,#6366f1,#22c55e);
+color:#fff;
+text-decoration:none;
+margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+<div class="logo">Chandirakkumar</div>
+
+<div class="menu">
+<a class="active" onclick="showSection('dashboard', this)">Dashboard</a>
+<a onclick="showSection('projects', this)">Projects</a>
+<a onclick="showSection('skills', this)">Skills</a>
+<a onclick="showSection('contact', this)">Contact</a>
+</div>
+</div>
+
+<div class="main">
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="section active">
+
+<div class="about-card">
+<img src="IMG_20260409_223924.jpg" alt="Profile">
+<div class="about-info">
+<h2>Chandirakkumar S</h2>
+<p>Instructional Designer & E-Learning Developer</p>
+<p>Instructional Designer with 1+ year experience in Storyline 360, LMS management, and interactive eLearning development.</p>
+</div>
+</div>
+
+<div class="section-header">
+<h2>Dashboard Overview</h2>
+<p>Quick overview of my work and experience.</p>
+</div>
+
+<div class="grid dashboard-grid">
+
+<div class="card">
+<h3>📘 100+ Modules</h3>
+<p>Interactive modules built.</p>
+</div>
+
+<div class="card">
+<h3>⚙️ End-to-End</h3>
+<p>Design to delivery.</p>
+</div>
+
+<div class="card">
+<h3>💻 LMS</h3>
+<p>QuickLearn & LearnDash.</p>
+</div>
+
+<div class="card">
+<h3>🏢 Clients</h3>
+<p>Kotak, KVB, IIFL.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="section">
+<div class="section-header">
+<h2>Projects</h2>
+<p>My recent work.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+<h3>PPT Design</h3>
+<p>Training presentations.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d">
+<h3>Video Editing</h3>
+<p>Explainer videos.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+<h3>Storyline</h3>
+<p>Interactive modules.</p>
+</div>
+
+</div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills" class="section">
+<div class="section-header">
+<h2>Skills</h2>
+<p>Tools I use.</p>
+</div>
+
+<div class="card">
+<div class="skill">Storyline<div class="bar"><div style="width:90%"></div></div></div>
+<div class="skill">PowerPoint<div class="bar"><div style="width:95%"></div></div></div>
+<div class="skill">Premiere Pro<div class="bar"><div style="width:85%"></div></div></div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+<div class="section-header">
+<h2>Contact</h2>
+<p>Open to instructional design opportunities.</p>
+</div>
+
+<div class="card">
+<p>Email: sv393015@gmail.com</p>
+<a href="mailto:sv393015@gmail.com" class="btn">Send Mail</a>
+</div>
+</div>
+
+</div>
+
+<script>
+function showSection(id, el){
+document.querySelectorAll('.section').forEach(sec=>sec.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+
+document.querySelectorAll('.menu a').forEach(link=>link.classList.remove('active'));
+el.classList.add('active');
+}
+</script>
+
+</body>
 </html>
